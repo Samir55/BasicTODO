@@ -22,7 +22,7 @@ import Models.Reminder;
 
 public class RemindersActivity extends AppCompatActivity {
     // The data in part one is saved here for now, @Samir55 TODO Add SQLite
-    ArrayList<Reminder> reminders = new ArrayList<>();;
+    ArrayList<Reminder> reminders = new ArrayList<>();
 
     // The to-do (reminders) list view
     ListView todoList;
