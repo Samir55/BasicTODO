@@ -1,6 +1,9 @@
 package Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +25,9 @@ public class ReminderAdapter extends ArrayAdapter<Reminder> {
         this.layoutResource = layoutResource;
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         View view = convertView;
 
@@ -36,9 +40,16 @@ public class ReminderAdapter extends ArrayAdapter<Reminder> {
 
         if (reminder != null) {
             TextView rightTextView = (TextView) view.findViewById(R.id.rightTextView);
+            View rectangleView = (View) view.findViewById(R.id.importantRectangle);
 
             if (rightTextView != null) {
                 rightTextView.setText(reminder.getText());
+            }
+
+            if (reminder.getImportant() == 1) {
+                rectangleView.setBackgroundColor(Color.parseColor("#E22C29"));
+            } else{
+                rectangleView.setBackgroundColor(Color.TRANSPARENT);
             }
         }
 

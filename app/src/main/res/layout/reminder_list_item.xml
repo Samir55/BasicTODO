@@ -7,7 +7,8 @@
     <View
         android:layout_width="20dp"
         android:layout_height="100dp"
-        android:background="@drawable/rectangle" />
+        android:background="@drawable/rectangle"
+        android:id="@+id/importantRectangle"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
